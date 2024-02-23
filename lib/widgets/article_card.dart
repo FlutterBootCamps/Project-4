@@ -17,19 +17,18 @@ class ArticleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         context.push(context, ArticleDetails(article: article));
       },
       child: ClipRRect(
         borderRadius: BorderRadius.circular(4),
         child: Container(
           width: context.getWidth(context),
-          height: 137,
+          height: 127,
           color: bgAppBarColor,
           padding: const EdgeInsets.all(8),
           margin: const EdgeInsets.only(bottom: 12),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,7 +38,8 @@ class ArticleCard extends StatelessWidget {
                     width: 80,
                     height: 62,
                     decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.all(Radius.circular(4)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(4)),
                         image: DecorationImage(
                             image: AssetImage(article.img), fit: BoxFit.cover)),
                   ),
@@ -94,7 +94,9 @@ class ArticleCard extends StatelessWidget {
                       return Expanded(
                         child: IconButton(
                           onPressed: () {
-                            context.read<ArticleBloc>().add(SaveArticleEvent(article: article));
+                            context
+                                .read<ArticleBloc>()
+                                .add(SaveArticleEvent(article: article));
                           },
                           icon: Image.asset(
                             (article.isSaved)

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/bloc/article_bloc.dart';
+import 'package:news_app/bloc/navigation_bloc.dart';
 import 'package:news_app/helpers/extensions/screen_helper.dart';
 import 'package:news_app/utils/colors.dart';
 import 'package:news_app/utils/fonts.dart';
 import 'package:news_app/utils/setup.dart';
 import 'package:news_app/widgets/header_bar.dart';
 import 'package:news_app/widgets/main_articleContainer.dart';
-
 
 class FeedPage extends StatelessWidget {
   const FeedPage({super.key});
@@ -23,9 +23,10 @@ class FeedPage extends StatelessWidget {
               length: 5,
               child: TabBar(
                   onTap: (index) {
-                    context.read<ArticleBloc>().add(ChangeFieldEvent(fieldIndex: index));
+                    context
+                        .read<ArticleBloc>()
+                        .add(ChangeFieldEvent(fieldIndex: index));
                   },
-                  
                   dividerColor: textInactiveColorTabBar,
                   indicatorColor: selectedTabColor,
                   indicatorWeight: 3,
@@ -64,7 +65,9 @@ class FeedPage extends StatelessWidget {
               onPressed: () {}, icon: Image.asset("assets/icons/list.png")),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                context.read<NavigationBloc>().add(ChangePageEvent(pageIndex: 1));
+              },
               icon: Image.asset("assets/icons/search.png"),
             ),
             IconButton(
@@ -96,23 +99,36 @@ class FeedPage extends StatelessWidget {
                 height: 4,
               ),
               SizedBox(
-                height: context.getHeight(context) * .42,
-                child: BlocBuilder<ArticleBloc, ArticleState>(
-                  builder: (context, state) {
-                    if (state is ChangedFieldState) {
-                      return ListView(
-                                  children: state.generatedList,
-                                );
-                    }else if (state is ChangedFieldEmptyState){
-                      return const Center(child: Text("No results for this field.", style: TextStyle(color: lilGreyColor, fontFamily: mainFont, fontSize: 20,),));
-                    }else {
-                      return ListView(
-                        children: getIt.getFieldArticleList(),
-                      );
-                    }
-                  },
-                )
-              )
+                  height: context.getHeight(context) * .42,
+                  child: BlocConsumer<ArticleBloc, ArticleState>(
+                    listener: (context, state) {
+                      if (state is SaveArticleState) {
+                        context.showSnackBar(
+                            context, state.message, state.color);
+                      }
+                    },
+                    builder: (context, state) {
+                      if (state is ChangedFieldState) {
+                        return ListView(
+                          children: state.generatedList,
+                        );
+                      } else if (state is ChangedFieldEmptyState) {
+                        return const Center(
+                            child: Text(
+                          "No results for this field.",
+                          style: TextStyle(
+                            color: lilGreyColor,
+                            fontFamily: mainFont,
+                            fontSize: 20,
+                          ),
+                        ));
+                      } else {
+                        return ListView(
+                          children: getIt.getFieldArticleList(),
+                        );
+                      }
+                    },
+                  ))
             ],
           ),
         ));

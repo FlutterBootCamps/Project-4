@@ -14,3 +14,18 @@ final class SaveArticleEvent extends ArticleEvent{
 
   SaveArticleEvent({required this.article});
 }
+
+final class EditArticleEvent extends ArticleEvent{
+  final Article article;
+  final String title;
+  final String summary;
+  final String content;
+
+  EditArticleEvent(this.article, this.title, this.summary, this.content);
+}
+
+final class SearchEvent extends ArticleEvent{
+  final String searchCriteria;
+
+  SearchEvent({required this.searchCriteria});
+}

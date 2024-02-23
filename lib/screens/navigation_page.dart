@@ -15,6 +15,7 @@ class NavigationPage extends StatelessWidget {
       child: BlocBuilder<NavigationBloc, NavigationState>(
         builder: (context, state) {
           return Scaffold(
+            resizeToAvoidBottomInset: false,
             backgroundColor: bgColor,
             bottomNavigationBar: Container(
               decoration: const BoxDecoration(

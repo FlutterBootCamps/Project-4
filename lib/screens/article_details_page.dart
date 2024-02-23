@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/bloc/article_bloc.dart';
 import 'package:news_app/helpers/extensions/screen_helper.dart';
 import 'package:news_app/models/article_model.dart';
+import 'package:news_app/screens/edit_page.dart';
 import 'package:news_app/utils/colors.dart';
 import 'package:news_app/utils/fonts.dart';
 import 'package:news_app/widgets/icon_text_container.dart';
@@ -18,7 +19,7 @@ class ArticleDetails extends StatelessWidget {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        backgroundColor: exploreBgNavBarColor,
+        backgroundColor: secondaryBgNavBarColor,
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -29,6 +30,7 @@ class ArticleDetails extends StatelessWidget {
               onPressed: () {},
               icon: Image.asset("assets/icons/letter_sizing.png")),
           BlocBuilder<ArticleBloc, ArticleState>(
+            
             builder: (context, state) {
               return IconButton(
                   onPressed: () {
@@ -42,96 +44,102 @@ class ArticleDetails extends StatelessWidget {
             },
           ),
           IconButton(
-              onPressed: () {}, icon: Image.asset("assets/icons/edit.png")),
+              onPressed: () {
+                context.push(context, EditPage(article: article));
+              }, icon: Image.asset("assets/icons/edit.png")),
         ],
       ),
-      body: ListView(
-        children: [
-          Container(
-            width: context.getWidth(context),
-            height: context.getHeight(context) * .35,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(article.img), fit: BoxFit.cover)),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      body: BlocBuilder<ArticleBloc, ArticleState>(
+        builder: (context, state) {
+          return ListView(
               children: [
-                IconTextContainer(
-                  icon: "assets/icons/${article.field.toLowerCase()}.png",
-                  text: article.field.toUpperCase(),
+                Container(
+                  width: context.getWidth(context),
+                  height: context.getHeight(context) * .35,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage(article.img), fit: BoxFit.cover)),
                 ),
-                Text(
-                  article.title,
-                  style: const TextStyle(
-                      color: whiteColor,
-                      fontFamily: mainFont,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                ClipOval(
-                  child: Image.asset(
-                    article.userImg,
-                    width: 28,
-                    height: 28,
-                    fit: BoxFit.cover,
-                  ), //Used clipOval instead of circle avatar because the image sizing isn't available with circle avatar(background image).
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                Text(
-                  article.author,
-                  style: const TextStyle(
-                      color: lilGreyColor,
-                      fontFamily: mainFont,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500),
-                ),
-                const SizedBox(
-                  height: 12,
-                ),
-                Text(
-                  "${article.readingMinutes} min read • ${article.date}",
-                  style: const TextStyle(
-                      color: textInactiveColorTabBar,
-                      fontFamily: mainFont,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500),
-                ),
-                const SizedBox(
-                  height: 12,
-                ),
-                const SocialMediaBar(
-                  icons: [
-                    "assets/icons/facebook.png",
-                    "assets/icons/twitter.png",
-                    "assets/icons/link.png",
-                  ],
-                ),
-                const SizedBox(
-                  height: 60,
-                ),
-                TextSection(
-                  title: "Summary",
-                  text: article.summary,
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                TextSection(
-                  title: "Content",
-                  text: article.content,
-                ),
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      IconTextContainer(
+                        icon: "assets/icons/${article.field.toLowerCase()}.png",
+                        text: article.field.toUpperCase(),
+                      ),
+                      Text(
+                        article.title,
+                        style: const TextStyle(
+                            color: whiteColor,
+                            fontFamily: mainFont,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      ClipOval(
+                        child: Image.asset(
+                          article.userImg,
+                          width: 28,
+                          height: 28,
+                          fit: BoxFit.cover,
+                        ), //Used clipOval instead of circle avatar because the image sizing isn't available with circle avatar(background image).
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        article.author,
+                        style: const TextStyle(
+                            color: lilGreyColor,
+                            fontFamily: mainFont,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      Text(
+                        "${article.readingMinutes} min read • ${article.date}",
+                        style: const TextStyle(
+                            color: textInactiveColorTabBar,
+                            fontFamily: mainFont,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      const SocialMediaBar(
+                        icons: [
+                          "assets/icons/facebook.png",
+                          "assets/icons/twitter.png",
+                          "assets/icons/link.png",
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 60,
+                      ),
+                      TextSection(
+                        title: "Summary",
+                        text: article.summary,
+                      ),
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      TextSection(
+                        title: "Content",
+                        text: article.content,
+                      ),
+                    ],
+                  ),
+                )
               ],
-            ),
-          )
-        ],
+            );
+        },
       ),
     );
   }

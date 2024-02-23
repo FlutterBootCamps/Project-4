@@ -14,10 +14,10 @@ class Article {
   });
   late final int userID;
   late final String author;
-  late final String title;
+  late String title;
   late final String field;
-  late final String summary;
-  late final String content;
+  late String summary;
+  late String content;
   late final String date;
   late final int readingMinutes;
   late final String userImg;
