@@ -7,6 +7,7 @@ import 'package:news_app/utils/fonts.dart';
 import 'package:news_app/widgets/icon_text_container_big.dart';
 import 'package:news_app/widgets/text_box_field.dart';
 
+// This is the page where the user is able to search for anything, just by typing they will get results, it can be accessed through the NavigationPage and by clicking the search icon in the FeedPage
 class ExplorePage extends StatelessWidget {
   const ExplorePage({super.key});
 
@@ -41,11 +42,13 @@ class ExplorePage extends StatelessWidget {
                   listener: (context, state) {
                     if (state is SaveArticleState) {
                       context.showSnackBar(context, state.message, state.color);
-                      context.read<ArticleBloc>().add(SearchEvent(searchCriteria: searchController.text));
+                      context.read<ArticleBloc>().add(
+                          SearchEvent(searchCriteria: searchController.text));
                     }
                   },
                   builder: (context, state) {
-                    if (state is SearchState && searchController.text.isNotEmpty) {
+                    if (state is SearchState &&
+                        searchController.text.isNotEmpty) {
                       return SizedBox(
                         width: context.getWidth(context),
                         height: context.getHeight(context) * 0.72,
@@ -55,12 +58,19 @@ class ExplorePage extends StatelessWidget {
                       );
                     } else if (state is SearchEmptyState &&
                         searchController.text.isNotEmpty) {
-                      return Text(
-                        state.message,
-                        style: const TextStyle(
-                            color: lilGreyColor,
-                            fontFamily: mainFont,
-                            fontSize: 20),
+                      return Column(
+                        children: [
+                          const SizedBox(
+                            height: 265,
+                          ),
+                          Text(
+                            state.message,
+                            style: const TextStyle(
+                                color: lilGreyColor,
+                                fontFamily: mainFont,
+                                fontSize: 20),
+                          ),
+                        ],
                       );
                     } else {
                       return const Column(

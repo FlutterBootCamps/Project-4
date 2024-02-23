@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// This is a verstile bar that can be used to display multiple icons that can be clicked.
 class SocialMediaBar extends StatelessWidget {
   const SocialMediaBar({
     super.key,
@@ -15,7 +16,10 @@ class SocialMediaBar extends StatelessWidget {
         children: List.generate(icons.length, (index) {
           return Row(
             children: [
-              InkWell(onTap: () {}, borderRadius: BorderRadius.circular(40), child: Image.asset(icons[index])),
+              InkWell(
+                  onTap: () {},
+                  borderRadius: BorderRadius.circular(40),
+                  child: Image.asset(icons[index])),
               const SizedBox(
                 width: 12,
               ),

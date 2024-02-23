@@ -5,6 +5,7 @@ import 'package:news_app/utils/colors.dart';
 import 'package:news_app/utils/fonts.dart';
 import 'package:news_app/utils/setup.dart';
 
+// This is the page where the user can navigate through the main 4 pages, FeedPage, ExplorePage, SavedPage, and ProfilePage.
 class NavigationPage extends StatelessWidget {
   const NavigationPage({super.key});
 

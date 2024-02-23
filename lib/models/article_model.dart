@@ -1,3 +1,4 @@
+// This is the model used for making article objects
 class Article {
   Article({
     required this.userID,
@@ -23,8 +24,8 @@ class Article {
   late final String userImg;
   late final String img;
   late bool isSaved;
-  
-  Article.fromJson(Map<String, dynamic> json){
+
+  Article.fromJson(Map<String, dynamic> json) {
     userID = json['userID'];
     author = json['author'];
     title = json['title'];

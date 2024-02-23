@@ -10,9 +10,7 @@ final class ChangedFieldState extends ArticleState {
   ChangedFieldState({required this.generatedList});
 }
 
-final class ChangedFieldEmptyState extends ArticleState {
-
-}
+final class ChangedFieldEmptyState extends ArticleState {}
 
 final class SaveArticleState extends ArticleState {
   final String message;
@@ -36,7 +34,6 @@ final class EditedArticleErrorState extends ArticleState {
 final class SearchState extends ArticleState {
   final List<ArticleCard> generatedList;
   SearchState({required this.generatedList});
-
 }
 
 final class SearchEmptyState extends ArticleState {

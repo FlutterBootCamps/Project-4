@@ -4,6 +4,7 @@ import 'package:news_app/bloc/article_bloc.dart';
 import 'package:news_app/utils/setup.dart';
 import 'package:news_app/screens/navigation_page.dart';
 
+// This is the main file, where the program is initialized.
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setup();

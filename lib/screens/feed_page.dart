@@ -9,17 +9,21 @@ import 'package:news_app/utils/setup.dart';
 import 'package:news_app/widgets/header_bar.dart';
 import 'package:news_app/widgets/main_articleContainer.dart';
 
+// This is the main page of the app, where the user can view articles by category, the user starts in this page by default through the NavigationPage.
 class FeedPage extends StatelessWidget {
   const FeedPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: bgColor,
         appBar: AppBar(
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(48),
             child: DefaultTabController(
+              initialIndex: getIt
+                  .currentFieldIndex, // So that if the user changes the page their last tab location is used.
               length: 5,
               child: TabBar(
                   onTap: (index) {
@@ -66,7 +70,9 @@ class FeedPage extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () {
-                context.read<NavigationBloc>().add(ChangePageEvent(pageIndex: 1));
+                context
+                    .read<NavigationBloc>()
+                    .add(ChangePageEvent(pageIndex: 1));
               },
               icon: Image.asset("assets/icons/search.png"),
             ),

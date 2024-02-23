@@ -7,6 +7,7 @@ import 'package:news_app/utils/colors.dart';
 import 'package:news_app/utils/fonts.dart';
 import 'package:news_app/widgets/text_box_header.dart';
 
+// This is the page where the user can modify the article's title, summary and content to their liking, it can be accessed through the ArticleDetails screen
 class EditPage extends StatelessWidget {
   const EditPage({super.key, required this.article});
 

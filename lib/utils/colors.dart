@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// This file includes all the colors used in the project, to help in future modification (if necessary).
 const whiteColor = Colors.white;
 const bgColor = Color(0xff111111);
 const bgNavBarColor = Color(0xFF161513);

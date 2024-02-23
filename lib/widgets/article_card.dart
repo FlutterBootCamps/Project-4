@@ -7,6 +7,7 @@ import 'package:news_app/screens/article_details_page.dart';
 import 'package:news_app/utils/colors.dart';
 import 'package:news_app/utils/fonts.dart';
 
+// This widget is used to store the info of an article, and enables access to the ArticleDetailsPage
 class ArticleCard extends StatelessWidget {
   const ArticleCard({
     super.key,
