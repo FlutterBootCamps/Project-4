@@ -16,3 +16,5 @@ const lilGreyColor = Color(0xffB8B8B8);
 const mainArticleShadeColor1 = Color(0xCD0E0E0E);
 const mainArticleShadeColor2 = Color(0x80080808);
 const noColor = Colors.transparent;
+const exploreBgNavBarColor = Color(0xD7111111);
+const warmPurpleColor = Color(0xffBDA6F5);

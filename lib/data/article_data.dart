@@ -13,7 +13,8 @@ List<Map<String, dynamic>> blogDataset = [
     "userImg":
         "assets/images/user1.jpeg",
     "img":
-        "assets/images/articleImg1.png"
+        "assets/images/articleImg1.png",
+    "isSaved": false
   },
   {
     "userID": 1,
@@ -29,7 +30,8 @@ List<Map<String, dynamic>> blogDataset = [
     "userImg":
         "assets/images/user2.jpeg",
     "img":
-        "assets/images/articleImg2.png"
+        "assets/images/articleImg2.png",
+    "isSaved": false
   },
   {
     "userID": 2,
@@ -45,7 +47,8 @@ List<Map<String, dynamic>> blogDataset = [
     "userImg":
         "assets/images/user3.jpg",
     "img":
-        "assets/images/articleImg3.jpg"
+        "assets/images/articleImg3.jpg",
+    "isSaved": false
   },
   {
     "userID": 3,
@@ -61,7 +64,8 @@ List<Map<String, dynamic>> blogDataset = [
     "userImg":
         "assets/images/user4.png",
     "img":
-        "assets/images/articleImg4.jpg"
+        "assets/images/articleImg4.jpg",
+    "isSaved": false
   },
   {
     "userID": 4,
@@ -77,7 +81,8 @@ List<Map<String, dynamic>> blogDataset = [
     "userImg":
         "assets/images/user5.png",
     "img":
-        "assets/images/articleImg5.jpg"
+        "assets/images/articleImg5.jpg",
+    "isSaved": false
   },
   {
     "userID": 5,
@@ -93,7 +98,8 @@ List<Map<String, dynamic>> blogDataset = [
     "userImg":
         "assets/images/user6.jpg",
     "img":
-        "assets/images/articleImg6.jpg"
+        "assets/images/articleImg6.jpg",
+    "isSaved": false
   },
   {
     "userID": 6,
@@ -110,6 +116,7 @@ List<Map<String, dynamic>> blogDataset = [
     "userImg":
         "assets/images/user7.jpeg",
     "img":
-        "assets/images/articleImg7.jpg"
+        "assets/images/articleImg7.jpg",
+    "isSaved": false
   },
 ];

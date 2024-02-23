@@ -10,6 +10,7 @@ class Article {
     required this.readingMinutes,
     required this.userImg,
     required this.img,
+    required this.isSaved,
   });
   late final int userID;
   late final String author;
@@ -21,6 +22,7 @@ class Article {
   late final int readingMinutes;
   late final String userImg;
   late final String img;
+  late bool isSaved;
   
   Article.fromJson(Map<String, dynamic> json){
     userID = json['userID'];
@@ -33,6 +35,7 @@ class Article {
     readingMinutes = json['readingMinutes'];
     userImg = json['userImg'];
     img = json['img'];
+    isSaved = json['isSaved'];
   }
 
   Map<String, dynamic> toJson() {
@@ -47,6 +50,7 @@ class Article {
     _data['readingMinutes'] = readingMinutes;
     _data['userImg'] = userImg;
     _data['img'] = img;
+    _data['isSaved'] = isSaved;
     return _data;
   }
 }
