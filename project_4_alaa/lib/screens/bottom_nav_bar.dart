@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project_4_alaa/constant/color.dart';
-import 'package:project_4_alaa/screens/edit_news_screen.dart';
 import 'package:project_4_alaa/screens/home_screen.dart';
 import 'package:project_4_alaa/screens/profile_screen.dart';
 import 'package:project_4_alaa/screens/save_screen.dart';
-import 'package:project_4_alaa/screens/detail_news_screen.dart';
 import 'package:project_4_alaa/screens/explore_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -19,13 +17,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   List<Widget> screen = [
     const HomeScreen(),
-    // const EditNewsScreen(),
-    // const DetailNews(),
     ExploreScreen(),
-    const SaveScreen(),
-    
-    
-    
+    const SaveScreen(),    
     const ProfileScreen(),
   ];
 

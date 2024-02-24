@@ -7,6 +7,7 @@ import 'package:project_4_alaa/widgets/single_news_card_widget.dart';
 class FieldFilterWidget extends StatelessWidget {
   const FieldFilterWidget({super.key, required this.fieldName});
   final String fieldName;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,9 @@ class FieldFilterWidget extends StatelessWidget {
               children: [
                 ...state.allNews.map((element) {
                   if (element.field == fieldName) {
-                    return SingleNewsCard(allNews: element);
+                    return SingleNewsCard(
+                      allNews: element,                      
+                      );
                   }
                   return const Text("");
                 }),

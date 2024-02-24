@@ -10,5 +10,6 @@ const  darkGrey1  = Color.fromARGB(255, 59, 58, 58);
 const red = Color(0xffDD403C);
 const purple = Color(0xffBDA6F5);
 const cardGrey = Color.fromARGB(58, 158, 158, 158);
+const sliderGrey = Color.fromARGB(62, 0, 0, 0);
 
 

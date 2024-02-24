@@ -8,9 +8,7 @@ class FetchAllNewsEvent extends NewsEvent {}
 
 class SaveNewsEvent extends NewsEvent {
   final NewsModel savedNews;
-  // bool saved;
   SaveNewsEvent({required this.savedNews, 
-  // required this.saved
   });
 }
 

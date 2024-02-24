@@ -14,13 +14,13 @@ final class DisplatNewsState extends NewsState {
   DisplatNewsState({ required this.allNews});
 }
 
-final class SaveNewsState extends NewsState {
-  List<NewsModel> allSavedNews ;
-  // bool isSaved;
-  SaveNewsState({required this.allSavedNews, 
-  // required this.isSaved
-  });
-}
+// final class SaveNewsState extends NewsState {
+//   List<NewsModel> allSavedNews ;
+//   // bool isSaved;
+//   SaveNewsState({required this.allSavedNews, 
+//   // required this.isSaved
+//   });
+// }
 
 final class SearchState extends NewsState {
   List<NewsModel> newsSearched ;

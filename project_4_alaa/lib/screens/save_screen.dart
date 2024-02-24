@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_4_alaa/bloc/news_bloc.dart';
 import 'package:project_4_alaa/constant/color.dart';
 import 'package:project_4_alaa/constant/space.dart';
+import 'package:project_4_alaa/helper/screen_helper.dart';
 import 'package:project_4_alaa/widgets/single_news_card_widget.dart';
 
 class SaveScreen extends StatelessWidget {
@@ -30,47 +33,44 @@ class SaveScreen extends StatelessWidget {
                         color: white),
                   ),
                   height24,
-
                   BlocBuilder<NewsBloc, NewsState>(builder: (context, state) {
                     if (state is LoadingNewsState || state is NewsInitial) {
                       return const Center(child: CircularProgressIndicator());
                     }
-                    if (state is SaveNewsState) {
+                    if (state is DisplatNewsState) {
                       return Wrap(
                         children: [
-                          ...state.allSavedNews.map((element) =>
-                             
-                              SingleNewsCard(
-                              allNews: element,
-                              isSaved: bloc.selectedIndex == element.userID ? true : false,
-                              onPressedSave: (newsSaved) {
-                                bloc.add(SaveNewsEvent(savedNews: element,));
-                              },
-                            )
-                             
+                          ...state.allNews.map(
+                            (element) => element.isSaved
+                                ? SingleNewsCard(
+                                    allNews: element,
+                                    onPressedSave: (newsSaved) {
+                                      bloc.add(
+                                          SaveNewsEvent(savedNews: element));
+                                    })
+                                : const SizedBox.shrink(),
                           ),
                         ],
                       );
-                      
-
-                      //
                     }
+
                     return const Text("Error Fetch News");
                   }),
-
-
-                  //--------- list saved news or -----------
-                  // Align(
-                  //   alignment: Alignment.center,
-                  //   child: Text(
-                  //     "No news found",
-                  //     style: TextStyle(
-                  //         fontSize: 14,
-                  //         fontWeight: FontWeight.w400,
-                  //         color: grey),
-                  //   ),
-                  // ),
-                  
+                  // SizedBox(
+                  //     width: context.getWidth(),
+                  //     height: context.getHeight() / 1.5,
+                  //     child: const Row(
+                  //       mainAxisAlignment: MainAxisAlignment.center,
+                  //       children: [
+                  //         Text(
+                  //           "No news found",
+                  //           style: TextStyle(
+                  //               color: grey,
+                  //               fontSize: 20,
+                  //               fontWeight: FontWeight.w200),
+                  //         ),
+                  //       ],
+                  //     )),
                 ],
               ),
             ],

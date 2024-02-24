@@ -7,6 +7,7 @@ import 'package:project_4_alaa/helper/screen_helper.dart';
 import 'package:project_4_alaa/screens/explore_screen.dart';
 import 'package:project_4_alaa/widgets/field_filter_widget.dart';
 import 'package:project_4_alaa/widgets/silder_image_widget.dart';
+import 'package:project_4_alaa/widgets/subheader_home_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,6 +21,7 @@ class HomeScreen extends StatelessWidget {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: black,
         appBar: AppBar(
           backgroundColor: cardGrey,
@@ -45,20 +47,15 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           bottom: const TabBar(
+            isScrollable: true,
+            tabAlignment: TabAlignment.start,
             indicatorColor: red,
             indicatorSize: TabBarIndicatorSize.tab,
             dividerColor: darkGrey,
-            // labelStyle: TextStyle(fontWeight: FontWeight.w400, color: white),
-            labelPadding: EdgeInsets.all(0),
-                              labelStyle: const TextStyle(
-                      color: white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400),
-                       unselectedLabelStyle: const TextStyle(
-                      color: grey,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w300),
-
+            labelStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 16, color: white),
+            labelPadding: EdgeInsets.symmetric(horizontal:20),
+            unselectedLabelStyle:
+                TextStyle(color: grey, fontSize: 14, fontWeight: FontWeight.w500),
             tabs: [
               Tab(text: "Tech"),
               Tab(text: "AI"),
@@ -79,32 +76,13 @@ class HomeScreen extends StatelessWidget {
                       const SliderImageWidget(),
                       Container(
                         decoration: const BoxDecoration(
-                            border: Border(
-                                bottom: BorderSide(color: darkGrey, width: 2))),
+                        border: Border(
+                        bottom: BorderSide(color: darkGrey, width: 2))),
                       ),
                       height32,
-                      const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Top Stories",
-                            style: TextStyle(
-                                color: white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700),
-                          ),
-                          Text(
-                            "See all",
-                            style: TextStyle(
-                                color: grey,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600),
-                          )
-                        ],
-                      ),
-                      // height24,
-
-                       const FieldFilterWidget(fieldName:  "technology"),
+                      const subtitle(),
+                      
+                      const FieldFilterWidget(fieldName: "technology"),
                     ],
                   ),
                 ],

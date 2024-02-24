@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:project_4_alaa/constant/color.dart';
 import 'package:project_4_alaa/constant/space.dart';
@@ -5,6 +7,7 @@ import 'package:project_4_alaa/helper/screen_helper.dart';
 import 'package:project_4_alaa/model/news_model.dart';
 import 'package:project_4_alaa/screens/bottom_nav_bar.dart';
 import 'package:project_4_alaa/screens/edit_news_screen.dart';
+import 'package:project_4_alaa/widgets/save_icon_widegt.dart';
 
 class DetailNews extends StatelessWidget {
   const DetailNews({super.key, required this.singleNews});
@@ -27,17 +30,12 @@ class DetailNews extends StatelessWidget {
         ),
         actions: [
          Image.asset("asset/images/FrameFont.png"),
-          const Icon(
-            Icons.bookmark_border_rounded,
-            color: white,
-          ),
+          SaveIcon(allNews: singleNews),
           IconButton(            
               icon: const Icon(Icons.edit_outlined, color: white),
               onPressed: () {
                 context.pushTo(view: EditNewsScreen(updateNews: singleNews,));
               }),
-    
-          
         ],
       ),
 
@@ -53,8 +51,6 @@ class DetailNews extends StatelessWidget {
                 Image.network(
                   singleNews.img,
                   fit: BoxFit.fill,
-                  // "asset/images/image.png",
-                  // height: context.getWidth() * 0.709,
                   width: context.getWidth(),
                 ),
                 Padding(

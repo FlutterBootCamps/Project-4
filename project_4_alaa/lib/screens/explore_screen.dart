@@ -14,6 +14,8 @@ class ExploreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        final bloc = BlocProvider.of<NewsBloc>(context);
+
     return Scaffold(
       backgroundColor: black,
       body: SafeArea(
@@ -51,8 +53,13 @@ class ExploreScreen extends StatelessWidget {
                                     ),
                                   );
                                 }
-                                return SingleNewsCard(allNews: element);
-                              }),
+                                return SingleNewsCard(
+                                  allNews: element, 
+                                    onPressedSave: (newsSaved) {
+                                      bloc.add(
+                                          SaveNewsEvent(savedNews: element));
+                              });
+                              })
                             ],
                           );
                         }
