@@ -9,6 +9,7 @@ class NewsModel {
   late int readingMinutes;
   late String userImg;
   late String img;
+  late bool isBookmarked=false;
 
   NewsModel(
       {required this.userID,
@@ -20,7 +21,8 @@ class NewsModel {
       required this.date,
       required this.readingMinutes,
       required this.userImg,
-      required this.img});
+      required this.img,
+      this.isBookmarked=false});
 
   NewsModel.fromJson(Map<String, dynamic> json) {
     userID = json['userID'];
