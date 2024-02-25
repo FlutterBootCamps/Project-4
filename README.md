@@ -5,7 +5,8 @@ detalisPage:
 ![image](https://github.com/Saod5557/Project-4/assets/124809082/dd50747c-c600-4472-9bd5-26a27e77a290)
 
 ExplorePage:
-![image](https://github.com/Saod5557/Project-4/assets/124809082/2c4c0e4d-dba4-4523-92eb-694ecec81a21)
+![image](https://github.com/Saod5557/Project-4/assets/124809082/00094440-1764-4540-bd4f-66f368e0e1eb)
+
 svedPage:
 ![image](https://github.com/Saod5557/Project-4/assets/124809082/db9c06bd-afc1-41f0-ae7e-208d090b2935)
 
