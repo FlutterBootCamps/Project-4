@@ -1,48 +1,44 @@
 # Project-4
 
-## Description
+- Home page, with the ability to view articles, filter news articles by field, and navigate using the bottom navigation bar.
 
-Create a News App by applying the provided UI design from the Figma link and incorporating various functionalities to enhance the user experience. The app should allow users to browse, search, filter, save, remove, and update news articles, among other features.
-<br></br>
+  
+<img width="148" alt="project4-home2" src="https://github.com/AlaaMYahya/Project-4/assets/129466098/eb7a90f0-70e8-455e-9978-b69e69ed2d37">
 
-## Functionalities to Implement:
-1. Display news articles on the main screen.
-2. Show detailed information when a user selects a news article.
-3. Enable users to search for news articles by title.
-4. Allow users to filter news articles by field (e.g., technology, AI, cybersecurity).
-5. Enable users to save specific news articles for later viewing.
-6. Allow users to remove news articles from their saved list.
-7. Provide the functionality to update the content of news articles.
-<br></br>
+  <img width="145" alt="project4-home1" src="https://github.com/AlaaMYahya/Project-4/assets/129466098/543c592c-87d5-4ef0-947b-35b1b2c23a31">
 
-## Technological Requirements:
-- Utilize the provided JSON data file to retrieve news articles.
-- Implement a Model structure to manage the data.
-- Apply the BLoC pattern to manage state and business logic efficiently.
-<br></br>
 
-### UI to be implemented:  [Figma Link](https://www.figma.com/file/R854MgoP1kYI6T1k3QO6ja/News-Feed-App-%E2%80%93-UI-Design-(Community)?type=design&node-id=1-2&mode=design&t=uWvtFdHriFePdzvO-0)
+- A page containing detailed information about the selected article and the possibility of editing it.
+  
+ <img width="148" alt="project4-detailNews" src="https://github.com/AlaaMYahya/Project-4/assets/129466098/a9f40201-d7da-4163-8d23-54b7d584ef5a">
 
-## Submission Guidelines
-You will submit your project on GitHub by following these guidelines:
 
-1. Fork the Repository & Clone it
-2. Create a New Branch with your name, in this format: (First name - Last name).
-3. Commit the changes frequently and push it
-4. Finally, create a pull request to the original repository
-<br></br>
+  
+- The article editing page shows the content of the article and the possibility of modifying any part of it, but not necessarily all of it.
 
-**Note:** 
-- Be sure to include screenshots of your work.
-    - Add and organize the screenshots in your README file in your project
-<br></br>
+ <img width="146" alt="project4-updateNews" src="https://github.com/AlaaMYahya/Project-4/assets/129466098/b8069c4f-1449-42d1-9b07-27cd74263dd3">
+<img width="149" alt="project4-updateNews2" src="https://github.com/AlaaMYahya/Project-4/assets/129466098/579c5b57-b742-4564-97a9-f481a49abb06">
+ <img width="145" alt="project4-updateNews1" src="https://github.com/AlaaMYahya/Project-4/assets/129466098/af93580c-c82a-4a00-94af-4e3bbc97df77">
 
-## Deadline 
-The deadline for submitting the project is 2024 Feb 25 at 9:59 AM
-<br></br>
-## Additional Notes
-- Reach out for clarification or assistance if needed.
-- Have an enjoyable coding journey!
 
-<br></br>
-**Embark on your coding journey with confidence, Best of luck!**
+- Article search page, regardless of letters case.
+
+
+<img width="148" alt="project4-search" src="https://github.com/AlaaMYahya/Project-4/assets/129466098/d44fc2cc-906a-4ac2-8200-7784bb42c367">
+
+<img width="147" alt="project4-search1" src="https://github.com/AlaaMYahya/Project-4/assets/129466098/da83c3cc-5dfe-4c80-9a85-6aa5912e2c2d">
+
+
+- The save page to save articles to read later.
+
+  <img width="146" alt="project4-save" src="https://github.com/AlaaMYahya/Project-4/assets/129466098/b5a9aeba-ee27-4ee5-8757-ece8612a8d43">
+
+
+  <img width="146" alt="project4-save1" src="https://github.com/AlaaMYahya/Project-4/assets/129466098/93ffbea3-460b-4972-bf03-ea9eadbc4aaf">
+
+
+
+- The personal page.
+
+ <img width="146" alt="project4-profile" src="https://github.com/AlaaMYahya/Project-4/assets/129466098/39de72b5-a498-4634-aca6-9b46aeecd1af">
+
