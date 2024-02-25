@@ -1,48 +1,39 @@
-# Project-4
+feed page : 
+where the user can see the articles filtered by their field, and they can save the article or press on it to see the article details.
 
-## Description
+<img width="219" alt="Screenshot 2024-02-25 at 3 28 46 AM" src="https://github.com/shaimaathu/Project-4/assets/155615972/4b7ee3a7-c5f6-4ac2-8776-18de7ffb7358">
+<img width="234" alt="Screenshot 2024-02-25 at 3 32 48 AM" src="https://github.com/shaimaathu/Project-4/assets/155615972/7a022246-4e68-4472-84d5-8f0c192c6a51">
 
-Create a News App by applying the provided UI design from the Figma link and incorporating various functionalities to enhance the user experience. The app should allow users to browse, search, filter, save, remove, and update news articles, among other features.
-<br></br>
 
-## Functionalities to Implement:
-1. Display news articles on the main screen.
-2. Show detailed information when a user selects a news article.
-3. Enable users to search for news articles by title.
-4. Allow users to filter news articles by field (e.g., technology, AI, cybersecurity).
-5. Enable users to save specific news articles for later viewing.
-6. Allow users to remove news articles from their saved list.
-7. Provide the functionality to update the content of news articles.
-<br></br>
+article data page:
+display all the article details and the user can save the article or modify it.
 
-## Technological Requirements:
-- Utilize the provided JSON data file to retrieve news articles.
-- Implement a Model structure to manage the data.
-- Apply the BLoC pattern to manage state and business logic efficiently.
-<br></br>
+<img width="213" alt="Screenshot 2024-02-25 at 3 29 40 AM" src="https://github.com/shaimaathu/Project-4/assets/155615972/7f33dfb4-b9bb-4f5b-beb2-a75cb0d40314">
+<img width="243" alt="Screenshot 2024-02-25 at 3 29 47 AM" src="https://github.com/shaimaathu/Project-4/assets/155615972/3e62a67a-7358-4023-bf29-24fbed431701">
 
-### UI to be implemented:  [Figma Link](https://www.figma.com/file/R854MgoP1kYI6T1k3QO6ja/News-Feed-App-%E2%80%93-UI-Design-(Community)?type=design&node-id=1-2&mode=design&t=uWvtFdHriFePdzvO-0)
 
-## Submission Guidelines
-You will submit your project on GitHub by following these guidelines:
+edit page:
+the user can edit the article by changing the data and pressing the save button or he can just go back,
 
-1. Fork the Repository & Clone it
-2. Create a New Branch with your name, in this format: (First name - Last name).
-3. Commit the changes frequently and push it
-4. Finally, create a pull request to the original repository
-<br></br>
+<img width="225" alt="Screenshot 2024-02-25 at 3 29 56 AM" src="https://github.com/shaimaathu/Project-4/assets/155615972/fbd4ae0e-280d-4970-b562-5a970efd405c">
 
-**Note:** 
-- Be sure to include screenshots of your work.
-    - Add and organize the screenshots in your README file in your project
-<br></br>
 
-## Deadline 
-The deadline for submitting the project is 2024 Feb 25 at 9:59 AM
-<br></br>
-## Additional Notes
-- Reach out for clarification or assistance if needed.
-- Have an enjoyable coding journey!
 
-<br></br>
-**Embark on your coding journey with confidence, Best of luck!**
+explore page:
+the user can search for a particular article.
+
+<img width="226" alt="Screenshot 2024-02-25 at 3 29 03 AM" src="https://github.com/shaimaathu/Project-4/assets/155615972/8e046a11-16db-4930-b0ee-f979e3da195b">
+<img width="224" alt="Screenshot 2024-02-25 at 3 35 57 AM" src="https://github.com/shaimaathu/Project-4/assets/155615972/519f4537-6634-4496-9a97-40fc134cbedd">
+
+
+saved page:
+the user can see his saved articles.
+
+<img width="232" alt="Screenshot 2024-02-25 at 3 29 11 AM" src="https://github.com/shaimaathu/Project-4/assets/155615972/c0a74a3f-54f2-458b-8586-ccb7330ef8b9">
+<img width="222" alt="Screenshot 2024-02-25 at 3 29 22 AM" src="https://github.com/shaimaathu/Project-4/assets/155615972/4d305bac-ed9f-4a01-90c2-19f7ddcfafaa">
+
+
+profile page:
+
+<img width="221" alt="Screenshot 2024-02-25 at 3 29 29 AM" src="https://github.com/shaimaathu/Project-4/assets/155615972/4b8f328c-599e-4f1b-8367-467f9bb5c29e">
+
